@@ -1,0 +1,127 @@
+# How to Conduct an Application Security (AppSec) Risk Assessment
+A practical, step-by-step guide for new analysts, developers, and security professionals.
+
+This guide explains how to perform an application security risk assessment from start to finish. It is written to be clear, structured, and actionable — suitable for onboarding, internal training, and personal reference.
+
+---
+
+# 1. Overview
+
+An Application Security Risk Assessment helps identify, evaluate, and prioritize security risks in applications so that vulnerabilities can be addressed before they impact the business. This includes:
+
+- understanding what the application does  
+- identifying sensitive data involved  
+- analyzing architecture and data flows  
+- identifying threats and vulnerabilities  
+- scoring likelihood and impact  
+- documenting findings and recommending mitigation actions  
+
+This guide walks you through the standard workflow used by GRC, AppSec, and cybersecurity risk teams.
+
+---
+
+# 2. Step-by-Step Assessment Process
+
+## **Step 1: Gather Context**
+Before testing or evaluating security, gather essential information:
+
+- Application name and purpose  
+- Business owner and technical owner  
+- Hosting model (on-prem, cloud, hybrid)  
+- Data classification (PHI, PII, PCI, internal, public)  
+- User groups (internal users, customers, vendors)  
+- Key integrations with other systems  
+- Regulatory requirements (HIPAA, PCI, GDPR, etc.)  
+
+This helps establish the “risk surface.”
+
+---
+
+## **Step 2: Review Architecture & Data Flow**
+Request or create:
+
+- system architecture diagram  
+- data flow diagram (DFD)  
+- authentication & authorization model  
+- encryption approach  
+- network exposure (internet-facing, internal-only)  
+
+Questions to ask:
+
+- How does data move through the system?  
+- Where is sensitive data stored?  
+- Which components interact with external systems?  
+- What security controls protect each step?  
+
+---
+
+## **Step 3: Identify Threats & Vulnerabilities**
+Use structured threat models such as:
+
+- STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege)  
+- OWASP Top 10 application vulnerabilities  
+- MITRE ATT&CK techniques  
+
+Evaluate potential issues:
+
+- broken authentication  
+- insecure access controls  
+- injection risks  
+- misconfigurations  
+- insecure APIs  
+- weak session management  
+- missing encryption  
+- insufficient logging  
+
+Document each threat or vulnerability with:
+
+- description  
+- affected assets  
+- potential impact  
+- likelihood of exploitation  
+
+---
+
+## **Step 4: Evaluate Security Controls**
+Assess the presence and maturity of key controls:
+
+### Authentication & Access Control
+- MFA required?
+- SSO integrated?
+- Role-based access with least privilege?
+
+### Data Security
+- Encryption in transit (TLS 1.2/1.3)?
+- Encryption at rest?
+- Key management?
+
+### Logging & Monitoring
+- Centralized logs?
+- Alerts on suspicious behavior?
+- Admin activity logging?
+
+### Configuration & Hardening
+- Baseline configuration?
+- Patch management?
+- Cloud security best practices?
+
+Compare these controls to **NIST**, **HIPAA**, **SOC 2**, or internal policies.
+
+---
+
+## **Step 5: Score Likelihood & Impact**
+Use a standard scoring rubric — usually a **1–5 scale**:
+
+### Likelihood (1–5)
+How easily can the threat be exploited?
+
+### Impact (1–5)
+If exploited, what is the consequence?
+
+- PHI/PII exposure  
+- service disruption  
+- financial penalties  
+- regulatory violations  
+- reputational damage  
+
+### Calculate Risk Score:

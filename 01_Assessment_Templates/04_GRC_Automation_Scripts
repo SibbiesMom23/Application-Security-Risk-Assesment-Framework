@@ -1,0 +1,31 @@
+def risk_score(likelihood, impact):
+    """
+    Simple risk scoring function.
+    Likelihood and impact are expected to be integers from 1 to 5.
+    """
+    return likelihood * impact
+
+def risk_rating(score):
+    """
+    Converts a numeric risk score into a rating.
+    """
+    if score >= 15:
+        return "High"
+    elif score >= 6:
+        return "Medium"
+    else:
+        return "Low"
+
+if __name__ == "__main__":
+    print("=== Application Risk Scoring Tool ===")
+    try:
+        likelihood = int(input("Enter likelihood (1-5): "))
+        impact = int(input("Enter impact (1-5): "))
+
+        score = risk_score(likelihood, impact)
+        rating = risk_rating(score)
+
+        print(f"\nRisk Score: {score}")
+        print(f"Risk Rating: {rating}")
+    except ValueError:
+        print("Please enter numeric values between 1 and 5.")
